@@ -51,6 +51,7 @@ const getWeather = async (lat, lon) => {
     console.error("Error fetching weather data:", error);
   }
 };
+
 </script>
 
 <template>

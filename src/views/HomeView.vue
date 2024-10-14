@@ -42,7 +42,7 @@ const getWeather = async (lat, lon) => {
         description: data.weather[0].description,
         city: data.name,
         country: data.sys.country,
-        icon: data.weather[0].icon, 
+        icon: data.weather[0].icon,
       };
     } else {
       selectedWeather.value = null;
@@ -53,18 +53,15 @@ const getWeather = async (lat, lon) => {
 };
 </script>
 
-
 <template>
   <main class="container text-white">
     <div class="pt-4 mb-8 relative">
-
       <input
         type="text"
         v-model="searchQuery"
         @input="getSearchResults"
         placeholder="Search for a City or State..."
         class="py-2 px-1 w-full bg-transparent border-b focus:border-weather-primary focus:outline-none focus:shadow-[0px_1px_0_0_#004E71]" />
-
 
       <div v-if="searchQueryResults.length > 0">
         <div
@@ -77,15 +74,12 @@ const getWeather = async (lat, lon) => {
         </div>
       </div>
 
-
       <div v-if="selectedWeather" class="mt-4 text-center">
-
         <div class="mt-4">
           <img
             :src="`http://openweathermap.org/img/wn/${selectedWeather.icon}@2x.png`"
             alt="Weather Icon"
-            class="w-24 h-24 mx-auto"
-          />
+            class="w-24 h-24 mx-auto" />
         </div>
 
         <h3 class="text-xl mt-2">
@@ -97,7 +91,5 @@ const getWeather = async (lat, lon) => {
     </div>
   </main>
 </template>
-
-
 
 <style scoped></style>

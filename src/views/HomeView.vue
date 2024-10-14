@@ -52,10 +52,31 @@ const getWeather = async (lat, lon) => {
   }
 };
 
+const date = new Date();
+
+
+const readableDate = date.toLocaleDateString('en-US', {
+  weekday: 'long',
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric' 
+});
+
+
+const readableTime = date.toLocaleTimeString('en-US', {
+  hour: '2-digit', 
+  minute: '2-digit', 
+  second: '2-digit' 
+});
 </script>
 
 <template>
   <main class="container text-white">
+
+    <p class="text-xl font-bold text-center mt-6">
+      Today is :
+      {{ readableDate }} , {{ readableTime }}
+    </p>
     <div class="pt-4 mb-8 relative">
       <input
         type="text"
